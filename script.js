@@ -21,18 +21,34 @@ function writePassword() {
     enter = (prompt("You must choose between 8 and 128"));
 
   } else {
-    confirmNumber = confirm("Will this contain numbers?");
+    confirmNumbers = confirm("Will this contain numbers?");
     confirmCharacter = confirm("Will this contain special characters?");
-    confirmUppercase = confirm("Will this contain Uppercase letters?");
-    confirmLowercase = confirm("Will this contain Lowercase letters?");
+    confirmUpperCase = confirm("Will this contain Uppercase letters?");
+    confirmLowerCase = confirm("Will this contain Lowercase letters?");
 };
 
-if (!confirmCharacter && !confirmNumber && !confirmUppercase && !confirmLowercase) {
+if (!confirmCharacter && !confirmNumbers && !confirmUpperCase && !confirmLowerCase) {
   choices = alert("You must include what criteria you want!");
 
+}   
+
+  else if (confirmCharacter && confirmNumbers && confirmUpperCase && confirmLowerCase) {
+
+  choices = character.concat(numbers, lowerCase, upperCase);
+  }
+
+  else if (confirmCharacter && confirmNumbers && confirmUppercase) {
+    choices = character.concat(numbers, upperCase);
 }
-
-
+else if (confirmCharacter && confirmNumbers && confirmLowercase) {
+    choices = character.concat(numbers, lowerCase);
+}
+else if (confirmCharacter && confirmLowercase && confirmUppercase) {
+    choices = character.concat(lowerCase, upperCase);
+}
+else if (confirmNumbers && confirmLowercase && confirmUppercase) {
+    choices = numbers.concat(lowerCase, upperCase);
+}
 
 
 
