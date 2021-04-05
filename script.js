@@ -37,18 +37,38 @@ if (!confirmCharacter && !confirmNumbers && !confirmUpperCase && !confirmLowerCa
   choices = character.concat(numbers, lowerCase, upperCase);
   }
 
-  else if (confirmCharacter && confirmNumbers && confirmUppercase) {
+  else if (confirmCharacter && confirmNumbers && confirmUpperCase) {
     choices = character.concat(numbers, upperCase);
 }
-else if (confirmCharacter && confirmNumbers && confirmLowercase) {
+else if (confirmCharacter && confirmNumbers && confirmLowerCase) {
     choices = character.concat(numbers, lowerCase);
 }
-else if (confirmCharacter && confirmLowercase && confirmUppercase) {
+else if (confirmCharacter && confirmLowerCase && confirmUpperCase) {
     choices = character.concat(lowerCase, upperCase);
 }
-else if (confirmNumbers && confirmLowercase && confirmUppercase) {
+else if (confirmNumbers && confirmLowerCase && confirmUpperCase) {
     choices = numbers.concat(lowerCase, upperCase);
 }
+
+else if (confirmCharacter && confirmNumbers) {
+  choices = character.concat(numbers);
+
+} else if (confirmCharacter && confirmLowerCase) {
+  choices = character.concat(lowerCase);
+
+} else if (confirmCharacter && confirmUpperCase) {
+  choices = character.concat(upperCase);
+}
+else if (confirmLowerCase && confirmNumbers) {
+  choices = lowerCase.concat(numbers);
+
+} else if (confirmLowerCase && confirmUpperCase) {
+  choices = lowerCase.concat(upperCase);
+
+} else if (confirmNumbers && confirmUpperCase) {
+  choices = numbers.concat(upperCase);
+}
+
 
 
 
