@@ -87,10 +87,15 @@ function writePassword() {
     password.push(pickChoices);
 }
 
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+var ps = password.join("");
+UserInput(ps);
+return ps;
 
-  passwordText.value = password;
+function UserInput(ps) {
+  document.getElementById("password").textContent = ps;
+
+}
+
 
 }
 
