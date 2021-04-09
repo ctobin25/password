@@ -26,11 +26,13 @@ function writePassword() {
     confirmUpperCase = confirm("Will this contain uppercase letters?");
     confirmLowerCase = confirm("Will this contain lowercase letters?");
   };
+  
 
   if (!confirmCharacter && !confirmNumbers && !confirmUpperCase && !confirmLowerCase) {
     choices = alert("You must include what criteria you want!");
 
   }
+
 
   else if (confirmCharacter && confirmNumbers && confirmUpperCase && confirmLowerCase) {
 
@@ -49,6 +51,9 @@ function writePassword() {
   else if (confirmNumbers && confirmLowerCase && confirmUpperCase) {
     choices = numbers.concat(lowerCase, upperCase);
   }
+
+
+
 
   else if (confirmCharacter && confirmNumbers) {
     choices = character.concat(numbers);
@@ -85,16 +90,16 @@ function writePassword() {
   for (var i = 0; i < enter; i++) {
     var pickChoices = choices[Math.floor(Math.random() * choices.length)];
     password.push(pickChoices);
-}
+  }
 
-var ps = password.join("");
-UserInput(ps);
-return ps;
+  var ps = password.join("");
+  UserInput(ps);
+  return ps;
 
-function UserInput(ps) {
-  document.getElementById("password").textContent = ps;
+  function UserInput(ps) {
+    document.getElementById("password").textContent = ps;
 
-}
+  }
 
 
 }
